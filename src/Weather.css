@@ -58,3 +58,11 @@
 .weather-container {
   display: flex;
 }
+
+footer {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}

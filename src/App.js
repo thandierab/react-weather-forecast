@@ -19,7 +19,7 @@ export default function App() {
             href="https://thandierab-reactforecast.netlify.app/"
             target="blank"
           >
-            Netlify
+            Netlify.
           </a>
         </footer>
       </div>
