@@ -8,17 +8,17 @@ export default function WeatherForecast(props) {
   let [forecast, setForecast] = useState(null);
 
   useEffect(() => {
+    const load = () => {
+      let city = props.city;
+      const apiKey = "fdb54d87boat51d444fdd3abf00cc2b3";
+      let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+      axios.get(apiUrl).then(handleResponse);
+    };
+
     setLoaded(false);
     load();
   }, [props.city]);
-
-  function load() {
-    let city = props.city;
-    const apiKey = "fdb54d87boat51d444fdd3abf00cc2b3";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(handleResponse);
-  }
 
   function handleResponse(response) {
     if (response.data && response.data.daily) {
@@ -27,7 +27,7 @@ export default function WeatherForecast(props) {
     }
   }
 
-  if (loaded) {
+  if (loaded && forecast) {
     return (
       <div className="WeatherForecast">
         <div className="row">
@@ -46,7 +46,6 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    load();
     return null;
   }
 }
