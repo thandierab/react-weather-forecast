@@ -1,10 +1,10 @@
 .weather {
   border: 1px solid #dadde1;
+
   font-family: Arial, sans-serif;
   padding: 16px;
   border-radius: 4px;
-
-  color: rgb(135, 135, 135);
+  background-color: #b3e5fc;
 }
 
 .weather form {
@@ -12,7 +12,7 @@
 }
 
 .weather h1 {
-  color: #878787;
+  color: #0288d1;
   font-size: 24px;
   font-weight: 100;
   margin: 20px 0 0 0;
@@ -65,4 +65,12 @@ footer {
 
 a {
   text-decoration: none;
+}
+
+.btn {
+  background-color: #0288d1;
+}
+
+.btn:hover {
+  background-color: #0277bd;
 }
